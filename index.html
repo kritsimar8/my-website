@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body onload="displayDate()">
+    <div class="container">
+        <div class="row row-1 border-bottom">
+            <div class="brand-name flex-center border-right">
+                <div class="header">
+                    <h1>Frontend-Dev</h1>
+                </div>
+            </div>
+                <div class="brand-contact flex-center">
+                    <div class="contact-container">
+                        
+                        <p id="cur-date"></p>
+                        <p>New-Delhi</p>
+                        <p>India</p>
+                    </div>
+                </div>
+            </div>
+       
+            
+        <div class="row row-2 border-bottom">
+            <div class="hero-copy border-right">
+                <div class="i-row i-row1">
+                    <div class="col projects">
+                        <div class="project-list">
+                            <p>KritSimar</p>
+                            <p>23</p>
+                            <p><a href="">GitHub</a></p>
+                            <p><a href="">LinkedIn</a></p>
+                            <p><a href="">Twitter</a></p>
+                        </div>
+                        <div class="h-stripe"><span>kritsimar04@gmail.com</span></div>
+                    </div>
+                    <div class="col circle-text flex-center">
+                        <div class="text">
+                            <svg viewBox="-50 0 100 10" width="200" height="200">
+                                <defs>
+                                    <path
+                                        id="circle"
+                                        d=" 
+                                            M 50, 50
+                                            M -37, 0
+                                            a 37,37 0 1,1 74,0
+                                            a 37,37 0 1 ,1 -74, 0"
+                                    />
+                                </defs>
+                                <text font-size="13.5">
+                                    <textPath xlink:href="#circle">
+                                        -Creative-Frontend-Developer  
+
+                                    </textPath>
+
+                                </text>
+                            </svg>
+                        </div>
+                    </div>  
+                </div>
+                <div class="i-row i-row2">
+                    <div class="col lets-talk flex-center">
+                        <p>Let's Build <span>something</span></p>
+                    </div>
+                    <div class="col stripe">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-img">
+                <div class="img-container border-right">
+                    <div class="box"></div>
+                <div>
+                <img src="./3yx94h.jpg" alt="">
+            </div>
+        </div>
+        <div class="empty-rows">
+            <div class="white-space border-bottom"></div>
+            <div class="white-space"></div>
+        </div>
+    </div>
+</div>
+</div>
+    <div class="marquee">
+        <span>
+            &nbsp; worked on Technologies &nbsp; -- &nbsp; TypeScript &nbsp;/&nbsp; NextJs &nbsp;/&nbsp; Gsap &nbsp;/&nbsp; ReactJs &nbsp;/
+            &nbsp; MongoDb &nbsp;/&nbsp; InfluxDb &nbsp;/&nbsp;
+            Grafana &nbsp;&nbsp;/&nbsp;&nbsp; NodeJs &nbsp;&nbsp;/&nbsp;&nbsp;Prisma&nbsp;&nbsp;/&nbsp;&nbsp;Neon&nbsp;
+        </span>
+    </div>
+    <script>
+         function displayDate() {
+        let today = new Date();
+        let formattedDate = today.toLocaleDateString("en-US"); 
+        document.getElementById("cur-date").textContent = formattedDate;
+        console.log(formattedDate)
+         }
+        gsap.to(".row-1,.row-2",1,{
+            top:0,
+            ease:"power4.out",
+            delay:1,
+            stagger:{
+                amount:0.5,
+            },
+        });
+        gsap.to(".brand-name",1,{
+            left:0,
+            ease:"power4.out",
+            delay:2.5,
+            stagger:{
+                amount:0.5,
+            },
+        });
+        gsap.from(".lets-talk p",0.1,{
+            opacity:0,
+            ease:"power4.out",
+            delay:2,
+        });
+        gsap.from(".text",2,{
+            scale:0,
+            ease:"power4.out",
+            delay:2,
+        });
+        gsap.from(".text",20,{
+            rotation:360,
+            ease:Linear.easeNone,
+            repeat:-1,
+        });
+        gsap.to(".box",1,{
+            top:"100%",
+            ease:"power4.out",
+            delay:2,
+        });
+        gsap.to(".h1,p",1,{
+            top:0,
+            ease:"power4.out",
+            delay:2,
+            stagger:{
+                amount:0.5,
+            },
+        });
+        gsap.from(".h-stripe",1,{
+            top:"500%",
+            ease:"power4.out",
+            delay:3.5,
+        });
+        gsap.from(".line",1,{
+            scaleX:0,
+            ease:"power4.out",
+            delay:3.5,
+        })
+        gsap.from(".marquee",1,{
+            bottom:"-10em",
+            ease:"power4.out",
+            delay:3
+        });
+
+
+    </script>
+    
+</body>
+</html>
